@@ -1,0 +1,52 @@
+header {
+    background: bisque;
+
+    font-size: x-large;
+    float: left;
+    width: 100%;
+
+    position: relative;
+    z-index: 5;
+}
+
+header li {
+    float: left;
+    position: relative;
+    margin-right: 1rem;
+}
+
+header a {
+    display: block;
+    padding: 5px;
+    font-size: small;
+}
+
+header a:hover {
+    color: black;
+}
+
+.dropdown {
+    background: grey;
+    position: absolute;
+    display: none;
+}
+
+.dropdown li {
+    padding-top: .1rem;
+    float: none;
+}
+
+.dropdown a {
+    white-space: nowrap;
+}
+
+header li:hover .dropdown{
+    display: block;
+}
+
+a {
+    text-decoration: none;
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+}
