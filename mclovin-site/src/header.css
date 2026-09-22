@@ -7,13 +7,28 @@ header {
 
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
 
     position: relative;
     z-index: 5;
 }
 
-header li {
+nav ul {
+    display: flex;
+}
+
+.dropdown {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+/* header li {
     float: left;
     position: relative;
     margin-right: 1rem;
@@ -45,11 +60,4 @@ header a:hover {
 
 header li:hover .dropdown{
     display: block;
-}
-
-a {
-    text-decoration: none;
-
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-}
+} */
