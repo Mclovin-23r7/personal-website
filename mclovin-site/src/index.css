@@ -46,3 +46,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* Custom */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Grid */
+#root {
+	display: grid;
+	grid-template-columns: 10% auto 10%;
+
+	font-family: "Raleway", sans-serif;
+}
+
+#root > * {
+	grid-column: 2/3;
+}

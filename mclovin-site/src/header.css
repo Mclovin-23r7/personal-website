@@ -1,63 +1,54 @@
 header {
-    background: lightblue;
-
-    font-size: large;
-    width: 100%;
-    height: 2rem;
-
     display: flex;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    z-index: 5;
+
+    background-color: #B7E2EF;
+
+    font-optical-sizing: auto;
+    font-size: x-large;
+}
+
+header h1 {
+    padding-left: 1.5rem;
+    font-weight: 300;
+    font-size: 3rem;
+    text-shadow: .25rem .25rem white;
 }
 
 nav ul {
     display: flex;
+    align-items: stretch;
 }
 
-.dropdown {
+nav,
+nav ul {
+    height: 100%
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    padding-right: 1.5rem;
+}
+
+.nav-dropdown > a {
+    cursor: default;
+}
+
+.nav-dropdown ul{
     display: none;
-}
-
-a {
-    text-decoration: none;
-
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-}
-
-
-/* header li {
-    float: left;
-    position: relative;
-    margin-right: 1rem;
-}
-
-header a {
-    display: block;
-    padding: 1rem;
-}
-
-header a:hover {
-    color: black;
-}
-
-.dropdown {
-    background: lightcoral;
     position: absolute;
-    display: none;
+    top: 100%;
+    padding-bottom: 1rem;
 }
 
-.dropdown li {
-    padding-top: .1rem;
-    float: none;
+.nav-dropdown ul li {
+    padding-top: 1rem;
+    background-color: white;
 }
 
-.dropdown a {
-    white-space: nowrap;
-}
-
-header li:hover .dropdown{
+.nav-dropdown:hover ul{
     display: block;
-} */
+}
