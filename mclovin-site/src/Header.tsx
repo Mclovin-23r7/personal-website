@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 export default function Header() {
+    // Mobile functions
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const [menuDropdownOpen, setMenuDropdownOpen] = useState(false);
@@ -19,6 +20,9 @@ export default function Header() {
         setMobileMenuOpen(false)
     }
 
+    // Desktop functions
+
+
     return (
         <>
         <header>
@@ -30,12 +34,27 @@ export default function Header() {
                 <div className='burger burger3' />
             </div>
 
-            <nav className={mobileMenuOpen ? '' : 'nav-hidden'}>
+            <nav className={mobileMenuOpen ? 'mobile-nav' : 'mobile-nav nav-hidden'}>
                 <ul>
                     <li className="nav-dropdown"><a onClick={toggleMenuDropdown}>Projects</a>
                         <ul className={menuDropdownOpen ? 'menu-dropdown menu-show' : 'menu-dropdown menu-hidden'}>
                             <li><Link to="/yaisst" onClick={closeMobileMenu}>Yet Another ISS Tracker</Link></li>
                             <li><Link to="#" onClick={closeMobileMenu}>Interactive Biblical Map</Link></li>
+                        </ul>
+                    </li>
+                    <li><Link to="#" onClick={closeMobileMenu}>Monkey Thoughts</Link></li>
+                    <li><Link to="#" onClick={closeMobileMenu}>Guestbook</Link></li>
+                    <li><Link to="#" onClick={closeMobileMenu}>Contact</Link></li>
+                </ul>
+            </nav>
+
+            {/* Desktop navigation - there's definitely a better way to do this */}
+            <nav className='desktop-nav'>
+                <ul>
+                    <li className='nav-dropdown'><a >Projects</a>
+                        <ul className=''>
+                            <li><Link to="/yaisst" >Yet Another ISS Tracker</Link></li>
+                            <li><Link to="#" >Interactive Biblical Map</Link></li>
                         </ul>
                     </li>
                     <li><Link to="#" onClick={closeMobileMenu}>Monkey Thoughts</Link></li>

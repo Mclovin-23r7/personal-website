@@ -1,109 +1,28 @@
-.hide {
-    display: none;
-}
-
-.menu-button {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
-    z-index: 10;
-
-    padding: 1vh 5vw 1vh 0;
-}
-
-.burger {
-    width: 2rem;
-    height: 0.25rem;
-    border-radius: 10px;
-    background-color: black;
-    transform-origin: 1px;
-    transition: all 0.3s linear;
-    transition-duration: .1s;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    font-optical-sizing: auto;
-    background-color: #B7E2EF;    
-}
-
-header h1 {
-    font-size: 2.75rem;
-    padding: 1vh 0 1vh 5vw;
-}
-
-.nav-hidden {
-    transform: translateX(100%);
-}
-
-nav {
-    position: absolute;
-    top: 99%;
-    right: 0;
-    height: 50vh;
-    width: 100%;
-
-    background-color: #B7E2EF;
-    padding-top: .5em;
-    padding-bottom: 3vh;
-
-    transform: translateX(0);
-    transition: transform .3s ease;
-    z-index: 5;
-}
-
-nav ul {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-nav ul li {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    font-size: 2.5em;
-}
-
-.nav-dropdown {
-    position: relative;
-}
-
-.menu-hidden {
-    transform: translateX(100%);
-    transition: transform .3s ease;
-    z-index: 5;
-}
-
-.menu-show {
-    transform: translateX(0);
-    transition: transform .3s ease;
-    z-index: 5;
-}
-
-.menu-dropdown {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 100%;
-    background-color: #F1ECEC;
-}
-
-.menu-dropdown li {
-    padding: .5em 0 .5em 0;
-    font-size: 1em;
-}
-
-@media screen and (width >= 900px) {
-    .menu-button {
+/* My contempt for CSS soothes my aching soul */
+@media screen and (width < 900px){
+    .desktop-nav {
         display: none;
+    }
+
+    .menu-button {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: space-around;
+        flex-flow: column nowrap;
+        z-index: 10;
+
+        padding: 1vh 5vw 1vh 0;
+    }
+
+    .burger {
+        width: 2rem;
+        height: 0.25rem;
+        border-radius: 10px;
+        background-color: black;
+        transform-origin: 1px;
+        transition: all 0.3s linear;
+        transition-duration: .1s;
     }
 
     header {
@@ -111,9 +30,98 @@ nav ul li {
         justify-content: space-between;
         align-items: center;
         position: relative;
+        font-optical-sizing: auto;
+        background-color: #B7E2EF;    
+    }
 
+    header h1 {
+        font-size: 2.75rem;
+        padding: 1vh 0 1vh 5vw;
+    }
+
+    .nav-hidden {
+        transform: translateX(100%);
+    }
+
+    nav {
+        position: absolute;
+        top: 99%;
+        right: 0;
+        height: 50vh;
+        width: 100%;
+
+        background-color: #B7E2EF;
+        padding-top: .5em;
+        padding-bottom: 3vh;
+
+        transform: translateX(0);
+        transition: transform .3s ease;
+        z-index: 5;
+    }
+
+    nav ul {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    nav ul li {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        font-size: 2.5em;
+    }
+
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .menu-hidden {
+        transform: translateX(100%);
+        transition: transform .3s ease;
+        z-index: 5;
+    }
+
+    .menu-show {
+        transform: translateX(0);
+        transition: transform .3s ease;
+        z-index: 5;
+    }
+
+    .menu-dropdown {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 100%;
+        background-color: #F1ECEC;
+    }
+
+    .menu-dropdown li {
+        padding: .5em 0 .5em 0;
+        font-size: 1em;
+    }
+}
+
+@media screen and (width >= 900px) {
+    .mobile-nav,
+    .menu-button {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: block;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
         font-optical-sizing: auto;
         font-size: x-large;
+        background-color: #B7E2EF;
     }
 
     header h1 {
@@ -130,7 +138,7 @@ nav ul li {
 
     nav,
     nav ul {
-        height: 100%
+        height: 100%;
     }
 
     nav ul li {
@@ -148,18 +156,26 @@ nav ul li {
     }
 
     .nav-dropdown ul{
-        display: none;
         position: absolute;
         top: 100%;
+        height: auto;
+        width: 25vw;
         padding-bottom: 1rem;
+        background-color: #b7c9ef;
+
+        transition: transform .3s ease;
+        transform: translateX(300%);
+
+        display: flex;
+        flex-direction: column;
     }
 
     .nav-dropdown ul li {
-        padding-top: 1rem;
-        background-color: white;
+        padding: 1rem 0 0 1rem;
     }
 
     .nav-dropdown:hover ul{
-        display: block;
+        transform: translateX(-10%);
+        transition: transform .3s ease;
     }
 }
