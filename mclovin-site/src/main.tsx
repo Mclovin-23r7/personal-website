@@ -4,7 +4,7 @@ import './index.css'
 import Home from './Home.tsx'
 import { BrowserRouter, Routes, Route } from "react-router";
 import Header from './Header.tsx';
-import Yaisst from './dumb-projects/Yaisst.tsx'
+import Yaisst from './dumb-projects/yaisst/Yaisst.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
