@@ -62,11 +62,10 @@ a {
 	/* Grid */
 	#root {
 		display: grid;
-		grid-template-columns: 10% auto 10%;
+		grid-template-columns: 15% auto 15%;
 		grid-template-rows: .4fr 1fr 1fr 1fr 1fr;
 		min-height: 100vh;
-		background: 
-			linear-gradient(to right, transparent 10%, white 10% 90%, transparent 90%),
+		background:
 			url("./assets/sparkle.gif") repeat;
 		background-color: #1a1a2e;
 	}

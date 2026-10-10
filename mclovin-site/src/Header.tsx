@@ -25,6 +25,18 @@ export default function Header() {
 
     return (
         <>
+        <style>{`
+            .burger1 {
+                transform: ${mobileMenuOpen ? 'rotate(45deg)' : 'rotate(0)'};
+            }
+            .burger2 {
+                opacity: ${mobileMenuOpen ? 0 : 1};
+            }
+            .burger3 {
+                transform: ${ mobileMenuOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+            }
+        `}</style>
+        
         <header>
             <h1><Link to="/" onClick={closeMobileMenu}>Mclovin</Link></h1>
 
@@ -43,7 +55,6 @@ export default function Header() {
                         </ul>
                     </li>
                     <li><Link to="#" onClick={closeMobileMenu}>Monkey Thoughts</Link></li>
-                    <li><Link to="#" onClick={closeMobileMenu}>Guestbook</Link></li>
                     <li><Link to="#" onClick={closeMobileMenu}>Contact</Link></li>
                 </ul>
             </nav>
@@ -58,23 +69,10 @@ export default function Header() {
                         </ul>
                     </li>
                     <li><Link to="#" onClick={closeMobileMenu}>Monkey Thoughts</Link></li>
-                    <li><Link to="#" onClick={closeMobileMenu}>Guestbook</Link></li>
                     <li><Link to="#" onClick={closeMobileMenu}>Contact</Link></li>
                 </ul>
             </nav>
         </header>
-
-        <style>{`
-            .burger1 {
-                transform: ${mobileMenuOpen ? 'rotate(45deg)' : 'rotate(0)'};
-            }
-            .burger2 {
-                opacity: ${mobileMenuOpen ? 0 : 1};
-            }
-            .burger3 {
-                transform: ${ mobileMenuOpen ? 'rotate(-45deg)' : 'rotate(0)'};
-            }
-        `}</style>
         </>
     )
 }
