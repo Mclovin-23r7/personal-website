@@ -31,7 +31,7 @@
         align-items: center;
         position: relative;
         font-optical-sizing: auto;
-        background-color: #B7E2EF;    
+        background-color: #B7E2EF;
     }
 
     header h1 {
@@ -115,6 +115,7 @@
     }
 
     header {
+        grid-column: 1/4;
         display: flex;
         justify-content: space-between;
         align-items: center;
