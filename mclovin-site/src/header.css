@@ -134,7 +134,12 @@ header {
         visibility: visible;
     }
 }
+
 @media screen and (width >= 900px) {
+    .sub-clip {
+        display: none;
+    }
+
     header {
         background-color: wheat;
         display: flex;
@@ -144,7 +149,7 @@ header {
         right: 0;
         top: 0;
         height: 100vh;
-        width: 15%;
+        width: 18%;
     }
 
     header h1 {
@@ -152,7 +157,22 @@ header {
         justify-content: center;
     }
 
-    nav {
-        font-size: 1.4rem;
+    .desktop-nav {
+        display: block;
+        width: 100%;
+    }
+
+    .desktop-nav nav {
+        font-size: 1.2rem;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .desktop-nav ul li {
+        padding: 1em 1em 0 0;
     }
 }

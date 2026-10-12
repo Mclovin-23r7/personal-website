@@ -34,7 +34,7 @@ export default function Header() {
                 <div className={mobileMenuOpen ? 'burger burger3' : 'burger'} />
             </div>
 
-            <div className={mobileMenuOpen ? 'nav-clip nav-open' : 'nav-clip'}>
+            <div className={mobileMenuOpen ? 'nav-clip nav-open desktop-nav' : 'nav-clip desktop-nav'}>
                 <nav>
                     <ul>
                         <li><a onClick={toggleProjectsMenu}>Projects</a>

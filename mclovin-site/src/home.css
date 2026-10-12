@@ -1,4 +1,75 @@
 /* I think a floating background would be cool - where you scroll the content but the background doesn't move */
-#home {
-    grid-column: 2/3;
+.home-background {
+    background-image: url('./assets/heart-pattern.svg');
+    background-position: left top;
+    background-repeat: repeat;
+    background-size: 12rem;
+
+    grid-column: 1/4;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.home {
+    grid-column: 2;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% auto;
+}
+
+.home aside {
+    background-color: firebrick;
+    margin-top: 10vh;
+    height: 80%;
+}
+
+.aside-items {
+    background-color: aliceblue;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.aside-items h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    position: relative;
+    transform: translatey(.5em);
+    margin-left: .5em;
+}
+
+.aside-items ul {
+    background-color: aliceblue;
+    margin: .2em;
+    border: .1em solid black;
+    border-radius: .3em;
+}
+
+.aside-items ul li {
+    margin: 1em 1em 1em 1em;
+}
+
+.home-item-container {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    margin: 10rem 1rem 0 1rem;
+}
+
+.home-item-heading {
+    font-size: 3em;
+}
+
+.home-items {
+    overflow-y: auto;
+    margin-bottom: 3rem;
+}
+
+.home-item {
+    background-color: lightcoral;
+    margin: 1em;
+    font-size: 1.5em;
 }
