@@ -5,73 +5,51 @@ import { useState } from 'react'
 export default function Header() {
     // Mobile functions
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-    const [menuDropdownOpen, setMenuDropdownOpen] = useState(false);
-    const toggleMenuDropdown = () => {
-        setMenuDropdownOpen(!menuDropdownOpen)
-    };
-
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen)
-        setMenuDropdownOpen(false)
+        if (projectsOpen) {setProjectsOpen(false)}
     };
 
-    const closeMobileMenu = () => {
+    const [projectsOpen, setProjectsOpen] = useState(false);
+    const toggleProjectsMenu = () => {
+        setProjectsOpen(!projectsOpen)
+    }
+
+    const closeMenus = () => {
+        setProjectsOpen(false)
         setMobileMenuOpen(false)
     }
 
-    // Desktop functions
-
-
     return (
         <>
-        <style>{`
-            .burger1 {
-                transform: ${mobileMenuOpen ? 'rotate(45deg)' : 'rotate(0)'};
-            }
-            .burger2 {
-                opacity: ${mobileMenuOpen ? 0 : 1};
-            }
-            .burger3 {
-                transform: ${ mobileMenuOpen ? 'rotate(-45deg)' : 'rotate(0)'};
-            }
-        `}</style>
-        
         <header>
-            <h1><Link to="/" onClick={closeMobileMenu}>Mclovin</Link></h1>
+            <h1><Link to="/" onClick={closeMenus}>Mclovin</Link></h1>
 
             <div className='menu-button' onClick={toggleMobileMenu}>
-                <div className='burger burger1' />
-                <div className='burger burger2' />
-                <div className='burger burger3' />
+                <div className={mobileMenuOpen ? 'burger burger1' : 'burger'} />
+                <div className='burger-centre'>
+                    <div className={mobileMenuOpen ? 'burger burger-centre-1' : 'burger'} />
+                    <div className={mobileMenuOpen ? 'burger burger-centre-2' : 'burger'} />
+                </div>
+                <div className={mobileMenuOpen ? 'burger burger3' : 'burger'} />
             </div>
 
-            <nav className={mobileMenuOpen ? 'mobile-nav' : 'mobile-nav nav-hidden'}>
-                <ul>
-                    <li className="nav-dropdown"><a onClick={toggleMenuDropdown}>Projects</a>
-                        <ul className={menuDropdownOpen ? 'menu-dropdown menu-show' : 'menu-dropdown menu-hidden'}>
-                            <li><Link to="/yaisst" onClick={closeMobileMenu}>Yet Another ISS Tracker</Link></li>
-                            <li><Link to="#" onClick={closeMobileMenu}>Interactive Biblical Map</Link></li>
-                        </ul>
-                    </li>
-                    <li><Link to="#" onClick={closeMobileMenu}>Monkey Thoughts</Link></li>
-                    <li><Link to="#" onClick={closeMobileMenu}>Contact</Link></li>
-                </ul>
-            </nav>
-
-            {/* Desktop navigation - there's definitely a better way to do this */}
-            <nav className='desktop-nav'>
-                <ul>
-                    <li className='nav-dropdown'><a >Projects</a>
-                        <ul className=''>
-                            <li><Link to="/yaisst" >Yet Another ISS Tracker</Link></li>
-                            <li><Link to="#" >Interactive Biblical Map</Link></li>
-                        </ul>
-                    </li>
-                    <li><Link to="#" onClick={closeMobileMenu}>Monkey Thoughts</Link></li>
-                    <li><Link to="#" onClick={closeMobileMenu}>Contact</Link></li>
-                </ul>
-            </nav>
+            <div className={mobileMenuOpen ? 'nav-clip nav-open' : 'nav-clip'}>
+                <nav>
+                    <ul>
+                        <li><a onClick={toggleProjectsMenu}>Projects</a>
+                            <div className={projectsOpen ? 'sub-clip sub-open' : 'sub-clip'}>
+                                <ul className='nav-dropdown'>
+                                    <li><Link to="/yaisst" onClick={closeMenus}>Yet Another ISS Tracker</Link></li>
+                                    <li><Link to="#" onClick={closeMenus}>Interactive Biblical Map</Link></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><Link to="#" onClick={closeMenus}>Monkey Thoughts</Link></li>
+                        <li><Link to="#" onClick={closeMenus}>Contact</Link></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         </>
     )

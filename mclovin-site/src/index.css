@@ -48,13 +48,15 @@ table {
 }
 
 /* Custom */
+/* Mobile layout */
+body {
+	font-family: "Raleway", sans-serif;
+	overflow: hidden;
+}
+
 a {
 	text-decoration: none;
 	color: black;
-}
-
-body > div {
-	
 }
 
 @media screen and (width >= 900px) {
@@ -66,14 +68,13 @@ body > div {
 			grid-template-rows: .4fr 1fr 1fr 1fr 1fr;
 			grid-column: 2/3;
 
-			font-family: "Raleway", sans-serif;
 			overflow: hidden;
 
 
-			min-height: 100vh;
-			background:
+			/* min-height: 100vh; */
+			/* background:
 				url("./assets/sparkle.gif") repeat;
-			background-color: #1a1a2e;
+			background-color: #1a1a2e; */
 		}
 	}
 }
