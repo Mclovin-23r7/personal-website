@@ -64,17 +64,9 @@ a {
 	body {
 		& div {
 			display: grid;
-			grid-template-columns: 15% auto 15%;
-			grid-template-rows: .4fr 1fr 1fr 1fr 1fr;
-			grid-column: 2/3;
-
+			grid-template-columns: 20% auto 20%;
+			/* grid-template-rows: repeat(5, 1fr); */
 			overflow: hidden;
-
-
-			/* min-height: 100vh; */
-			/* background:
-				url("./assets/sparkle.gif") repeat;
-			background-color: #1a1a2e; */
 		}
 	}
 }

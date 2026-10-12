@@ -1,1 +1,4 @@
 /* I think a floating background would be cool - where you scroll the content but the background doesn't move */
+#home {
+    grid-column: 2/3;
+}
