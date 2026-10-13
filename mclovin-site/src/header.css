@@ -62,6 +62,10 @@ header {
         height: auto;
     }
 
+    header img {
+        display: none;
+    }
+
     header > h1 {
         font-size: 1.4em;
         padding: .1em 0 .1em .1em;
@@ -152,8 +156,14 @@ header {
         width: 18%;
     }
 
+    header img {
+        margin: 1.2em;
+        border-radius: 1em;
+    }
+
     header h1 {
-        display: flex;
+        display: none;
+        /* display: flex; */
         justify-content: center;
     }
 

@@ -24,6 +24,7 @@ export default function Header() {
         <>
         <header>
             <h1><Link to="/" onClick={closeMenus}>Mclovin</Link></h1>
+            <img src='./src/assets/temp-header-image.jpg' />
 
             <div className='menu-button' onClick={toggleMobileMenu}>
                 <div className={mobileMenuOpen ? 'burger burger1' : 'burger'} />
